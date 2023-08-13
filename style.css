@@ -1,0 +1,405 @@
+@font-face {
+    font-family: Pop;
+    src: url(assets/fonts/Poppins-Regular.ttf);
+    src: url(assets/fonts/Poppins-BoldItalic.ttf);
+    src: url(assets/fonts/Poppins-ExtraBold.ttf);
+    
+}
+:root{
+--Purple: hsl(259, 100%, 65%);
+--Light-red: hsl(0, 100%, 67%);
+
+--White: hsl(0, 0%, 100%);
+--Off-white: hsl(0, 0%, 94%);
+--Light-grey: hsl(0, 0%, 86%);
+--Smokey-grey: hsl(0, 1%, 44%);
+--Off-black: hsl(0, 0%, 8%);
+}
+
+*, html{
+    margin:0;
+    padding: 0;
+    font-family: Pop;
+   
+}
+
+body{
+   background-color: var(--Off-white);
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   align-content: center;
+   width: 100%;
+   min-height: 100vh;
+   margin: 0;
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+.calculator{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+    width: 90%;
+    min-width: 300px;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--White);
+    border-radius: 20px 20px 100px 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 155px;
+
+}
+
+.input-box{
+
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--Smokey-grey);
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    position: relative;
+    height: 160px;
+    width: calc(100% / 3);
+
+}
+
+input{
+    width: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--Off-white);
+    outline: none;
+    z-index: 2;
+    margin-left: 7px;
+    font-size: 24px;
+    font-weight: 700;
+}
+input:focus{
+    border: 2px solid var(--Purple);
+}
+
+small{
+    color: rgb(255, 17, 64);
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-decoration: capitalize;
+    position: relative;
+    display: block;
+}
+.submit{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    background-color: var(--Purple);
+    justify-content: center;
+    justify-items: center;
+    cursor: pointer;
+    transition: 0.8s background ease-in;
+    z-index: 3;
+    border: none;
+    outline: none;
+    position: relative;
+    top: -50px;
+}
+
+.submit:hover{
+    background-color: var(--Off-black);
+    cursor: pointer;
+    transition: 0.8s background ease-in;
+}
+.output{
+    height: 100%;
+    position: relative;
+    width: 90%;
+    left: 0%;
+    top: -50px;
+    box-sizing: border-box;
+}
+.output span{
+    /* position: relative;
+    font-size: 75px;
+    color: var(--Purple);
+    font-style: italic;
+    padding: 0px;
+    left: -2.5rem;
+    top: 0.6rem;
+    line-height: 4rem; */
+
+
+    position: relative;
+    font-size: 3.1rem;
+    color: var(--Purple);
+    font-style: italic;
+    padding: 0px;
+    left: -1rem;
+    top: 0rem;
+    line-height: 2.5rem;
+
+}
+
+h1 {
+    font-size: 2.7rem;
+    font-weight: bolder;
+    font-family: 'Pop';
+    line-height: 100%;
+}
+
+
+@media screen and (min-width: 480px) {
+    
+    .calculator{
+        width: 400px;
+        height: auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    .output{
+        height: 100%;
+        position: relative;
+        width: 90%;
+        left: 6%;
+        top: -50px;
+        box-sizing: border-box;
+    }
+
+    input:focus{
+        border: 2px solid var(--Purple);
+    }
+}
+
+@media screen and (min-width: 680px) {
+    input:focus{
+        border: 2px solid var(--Purple);
+    }
+    .calculator{
+        width: 90%;
+       
+    }
+    h1 {
+        font-size: 4.7rem;
+        font-weight: bolder;
+        font-family: 'Pop';
+        line-height: 100%;
+    }
+
+    .submit {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        background-color: var(--Purple);
+        justify-content: center;
+        justify-items: center;
+        cursor: pointer;
+        transition: 0.8s background ease-in;
+        z-index: 3;
+        border: none;
+        outline: none;
+        position: relative;
+        top: -5vw;
+        right: -15rem;
+    }
+    input {
+        width: 100px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid var(--Off-white);
+        outline: none;
+        z-index: 2;
+        margin-left: 0px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .input-box {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var(--Smokey-grey);
+        padding-bottom: 5px;
+        box-sizing: border-box;
+        position: relative;
+        height: 160px;
+        width: calc(88% / 3);
+    }
+
+    .output{
+        height: 100%;
+        position: relative;
+        width: 90%;
+        left: 0%;
+        top: -50px;
+        box-sizing: border-box;
+    }
+    .flex {
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 155px;
+        padding-left: 30px;
+    }
+    
+.output span {
+    position: relative;
+    font-size: 5.1rem;
+    color: var(--Purple);
+    font-style: italic;
+    padding: 0px;
+    left: -1.5rem;
+    top: 0rem;
+    line-height: 2.5rem;
+}
+}
+
+@media screen and (min-width: 840px) {
+    input:focus{
+        border: 2px solid var(--Purple);
+    }
+    .calculator{
+        width: 600px;
+    }
+
+
+    .submit {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        background-color: var(--Purple);
+        justify-content: center;
+        justify-items: center;
+        cursor: pointer;
+        transition: 0.8s background ease-in;
+        z-index: 3;
+        border: none;
+        outline: none;
+        position: relative;
+        top: -5vw;
+        right: -15rem;
+    }
+
+    h1 {
+        font-size: 4.7rem;
+        font-weight: bolder;
+        font-family: 'Pop';
+        line-height: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .calculator{
+        width: 700px;
+    }
+    .submit {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        background-color: var(--Purple);
+        justify-content: center;
+        justify-items: center;
+        cursor: pointer;
+        transition: 0.8s background ease-in;
+        z-index: 3;
+        border: none;
+        outline: none;
+        position:relative;
+        top: -4vw;
+        right: -15rem;
+    }
+    h1 {
+        font-size: 4.7rem;
+        font-weight: bolder;
+        font-family: 'Pop';
+        line-height: 100%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    h1 {
+        font-size: 4.7rem;
+        font-weight: bolder;
+        font-family: 'Pop';
+        line-height: 100%;
+    }
+    .calculator{
+        width: 700px;
+    }
+    
+
+    .submit {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        background-color: var(--Purple);
+        justify-content: center;
+        justify-items: center;
+        cursor: pointer;
+        transition: 0.8s background ease-in;
+        z-index: 3;
+        border: none;
+        outline: none;
+        position:relative;
+        top: -4vw;
+        right: -15rem;
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 1400px) {
+    h1 {
+        font-size: 4.7rem;
+        font-weight: bolder;
+        font-family: 'Pop';
+        line-height: 100%;
+    }
+    .calculator{
+        width: 700px;
+    }
+    
+
+    .submit {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        background-color: var(--Purple);
+        justify-content: center;
+        justify-items: center;
+        cursor: pointer;
+        transition: 0.8s background ease-in;
+        z-index: 3;
+        border: none;
+        outline: none;
+        position:relative;
+        top: -3vw;
+        right: -15rem;
+    }
+}
+
+
